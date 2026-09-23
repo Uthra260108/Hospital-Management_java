@@ -1,0 +1,239 @@
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+// Patient class
+class Patient {
+    int id;
+    String name;
+    int age;
+    String gender;
+    String disease;
+
+    Patient(int id, String name, int age, String gender, String disease) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.disease = disease;
+    }
+
+    void displayPatient() {
+        System.out.println("Patient ID : " + id);
+        System.out.println("Name       : " + name);
+        System.out.println("Age        : " + age);
+        System.out.println("Gender     : " + gender);
+        System.out.println("Disease    : " + disease);
+        System.out.println("----------------------------");
+    }
+}
+
+// Doctor class
+class Doctor {
+    int id;
+    String name;
+    String specialization;
+
+    Doctor(int id, String name, String specialization) {
+        this.id = id;
+        this.name = name;
+        this.specialization = specialization;
+    }
+
+    void displayDoctor() {
+        System.out.println("Doctor ID      : " + id);
+        System.out.println("Name           : " + name);
+        System.out.println("Specialization : " + specialization);
+        System.out.println("----------------------------");
+    }
+}
+
+// Main class
+public class HospitalManagementSystem {
+
+    static ArrayList<Patient> patients = new ArrayList<>();
+    static ArrayList<Doctor> doctors = new ArrayList<>();
+
+    static Scanner scanner = new Scanner(System.in);
+
+    // Add a new patient
+    static void addPatient() {
+        System.out.println("\n--- Add Patient ---");
+
+        System.out.print("Enter Patient ID: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.print("Enter Patient Name: ");
+        String name = scanner.nextLine();
+
+        System.out.print("Enter Age: ");
+        int age = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.print("Enter Gender: ");
+        String gender = scanner.nextLine();
+
+        System.out.print("Enter Disease: ");
+        String disease = scanner.nextLine();
+
+        Patient patient = new Patient(id, name, age, gender, disease);
+        patients.add(patient);
+
+        System.out.println("Patient added successfully!");
+    }
+
+    // Display all patients
+    static void viewPatients() {
+        System.out.println("\n--- Patient List ---");
+
+        if (patients.isEmpty()) {
+            System.out.println("No patients found.");
+            return;
+        }
+
+        for (Patient patient : patients) {
+            patient.displayPatient();
+        }
+    }
+
+    // Search patient by ID
+    static void searchPatient() {
+        System.out.println("\n--- Search Patient ---");
+
+        System.out.print("Enter Patient ID: ");
+        int id = scanner.nextInt();
+
+        boolean found = false;
+
+        for (Patient patient : patients) {
+            if (patient.id == id) {
+                patient.displayPatient();
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Patient not found.");
+        }
+    }
+
+    // Add a new doctor
+    static void addDoctor() {
+        System.out.println("\n--- Add Doctor ---");
+
+        System.out.print("Enter Doctor ID: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.print("Enter Doctor Name: ");
+        String name = scanner.nextLine();
+
+        System.out.print("Enter Specialization: ");
+        String specialization = scanner.nextLine();
+
+        Doctor doctor = new Doctor(id, name, specialization);
+        doctors.add(doctor);
+
+        System.out.println("Doctor added successfully!");
+    }
+
+    // Display all doctors
+    static void viewDoctors() {
+        System.out.println("\n--- Doctor List ---");
+
+        if (doctors.isEmpty()) {
+            System.out.println("No doctors found.");
+            return;
+        }
+
+        for (Doctor doctor : doctors) {
+            doctor.displayDoctor();
+        }
+    }
+
+    // Search doctor by ID
+    static void searchDoctor() {
+        System.out.println("\n--- Search Doctor ---");
+
+        System.out.print("Enter Doctor ID: ");
+        int id = scanner.nextInt();
+
+        boolean found = false;
+
+        for (Doctor doctor : doctors) {
+            if (doctor.id == id) {
+                doctor.displayDoctor();
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Doctor not found.");
+        }
+    }
+
+    // Main method
+    public static void main(String[] args) {
+
+        int choice;
+
+        System.out.println("=================================");
+        System.out.println("     HOSPITAL MANAGEMENT SYSTEM");
+        System.out.println("=================================");
+
+        do {
+            System.out.println("\n--------- MAIN MENU ---------");
+            System.out.println("1. Add Patient");
+            System.out.println("2. View Patients");
+            System.out.println("3. Search Patient");
+            System.out.println("4. Add Doctor");
+            System.out.println("5. View Doctors");
+            System.out.println("6. Search Doctor");
+            System.out.println("7. Exit");
+            System.out.println("-----------------------------");
+
+            System.out.print("Enter your choice: ");
+            choice = scanner.nextInt();
+
+            switch (choice) {
+
+                case 1:
+                    addPatient();
+                    break;
+
+                case 2:
+                    viewPatients();
+                    break;
+
+                case 3:
+                    searchPatient();
+                    break;
+
+                case 4:
+                    addDoctor();
+                    break;
+
+                case 5:
+                    viewDoctors();
+                    break;
+
+                case 6:
+                    searchDoctor();
+                    break;
+
+                case 7:
+                    System.out.println("Thank you for using the system!");
+                    break;
+
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+
+        } while (choice != 7);
+
+        scanner.close();
+    }
+}
