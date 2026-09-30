@@ -2,6 +2,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 // Patient class
 class Patient {
     int id;
@@ -9,6 +10,7 @@ class Patient {
     int age;
     String gender;
     String disease;
+
 
     Patient(int id, String name, int age, String gender, String disease) {
         this.id = id;
