@@ -18,6 +18,8 @@ A simple **Hospital Management System built using Java**. This is a beginner-fri
 * Scanner
 * Object-Oriented Programming
 
+
+
 ## How to Run
 
 1. Install Java JDK.
