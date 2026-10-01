@@ -13,6 +13,7 @@ A simple **Hospital Management System built using Java**. This is a beginner-fri
 
 ## Technologies Used
 
+
 * Java
 * ArrayList
 * Scanner
