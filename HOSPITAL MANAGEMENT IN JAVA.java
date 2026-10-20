@@ -12,6 +12,7 @@ class Patient {
     String disease;
 
 
+
     Patient(int id, String name, int age, String gender, String disease) {
         this.id = id;
         this.name = name;
