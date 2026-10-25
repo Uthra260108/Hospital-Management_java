@@ -10,7 +10,7 @@ A simple **Hospital Management System built using Java**. This is a beginner-fri
 * View all doctors.
 * Search doctors by ID.
 * Simple menu-driven interface.
-
+  
 
 ## Technologies Used
 
