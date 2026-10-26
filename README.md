@@ -3,6 +3,7 @@
 A simple **Hospital Management System built using Java**. This is a beginner-friendly console-based project that demonstrates basic Object-Oriented Programming concepts.
 
 ## Features,
+
 * Add new patients.
 * View all patients.
 * Search patients by ID.
@@ -13,7 +14,6 @@ A simple **Hospital Management System built using Java**. This is a beginner-fri
   
 
 ## Technologies Used
-
 
 * Java
 * ArrayList
