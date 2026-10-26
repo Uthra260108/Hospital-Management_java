@@ -1,4 +1,4 @@
-# Hospital Management System 🏥
+# Hospital Management System 
 
 A simple **Hospital Management System built using Java**. This is a beginner-friendly console-based project that demonstrates basic Object-Oriented Programming concepts.
 
